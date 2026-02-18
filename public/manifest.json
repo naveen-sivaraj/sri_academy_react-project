@@ -1,0 +1,19 @@
+{
+  "name": "SRI'S TUITION ACADEMY",
+  "short_name": "SRI'S TUITION",
+  "description": "Tuition for LKG to 10th Standard in Coimbatore.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#1e3a8a",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
