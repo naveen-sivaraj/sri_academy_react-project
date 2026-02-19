@@ -38,7 +38,7 @@ const Home = () => {
                             Why Choose SRI'S TUITION?
                         </h2>
                         <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
-                            We focus on building a strong academic foundation for every student.
+                            We focus on building a strong career and academy foundation for every student.
                         </p>
                     </div>
 

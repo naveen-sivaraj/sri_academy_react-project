@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
-import { db } from '../lib/firebase';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+
 
 const EnquiryForm = () => {
     const [formData, setFormData] = useState({
@@ -23,6 +22,17 @@ const EnquiryForm = () => {
         setIsSubmitting(true);
         setSubmitStatus('idle');
 
+        // SIMULATED SUBMISSION (Mock Mode)
+        // In a real app with valid Firebase config, we would use addDoc here.
+        setTimeout(() => {
+            console.log("Mock submission:", formData);
+            setSubmitStatus('success');
+            setFormData({ name: '', phone: '', grade: '', subject: '', message: '' });
+            setIsSubmitting(false);
+        }, 1500);
+
+        /* 
+        // Real implementation (requires valid firebase config)
         try {
             await addDoc(collection(db, "enquiries"), {
                 ...formData,
@@ -37,6 +47,7 @@ const EnquiryForm = () => {
         } finally {
             setIsSubmitting(false);
         }
+        */
     };
 
     return (

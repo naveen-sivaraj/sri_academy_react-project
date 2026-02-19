@@ -22,13 +22,13 @@ const Footer = () => {
                 <div>
                     <h3 className="text-lg font-bold mb-4 text-secondary">Follow Us</h3>
                     <a
-                        href="https://www.instagram.com/shrrrii__"
+                        href="https://www.instagram.com/shrrii._?igsh=MW56Nmxncm12ZGdzdw=="
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center space-x-2 text-gray-300 hover:text-pink-500 transition-colors"
                     >
                         <Instagram className="h-6 w-6" />
-                        <span>@shrrrii__</span>
+                        <span>@shrrii._</span>
                     </a>
                 </div>
             </div>

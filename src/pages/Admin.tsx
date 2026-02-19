@@ -1,8 +1,6 @@
 
 import { useState } from 'react';
-import { collection, getDocs, query, orderBy, Timestamp } from 'firebase/firestore';
-import type { FirestoreError } from 'firebase/firestore';
-import { db } from '../lib/firebase';
+import { Timestamp } from 'firebase/firestore';
 import { Lock, LogIn, Calendar, User, Phone, Book } from 'lucide-react';
 
 interface Enquiry {
@@ -22,17 +20,6 @@ const Admin = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
 
-    const isRecoverableFirestoreError = (err: unknown) => {
-        const code = (err as FirestoreError)?.code;
-        const message = err instanceof Error ? err.message.toLowerCase() : '';
-
-        return (
-            code === 'unavailable' ||
-            message.includes('offline') ||
-            message.includes('missing or insufficient permissions')
-        );
-    };
-
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
         // Simple hardcoded password for demonstration
@@ -46,36 +33,31 @@ const Admin = () => {
 
     const fetchEnquiries = async () => {
         setLoading(true);
-        try {
-            // Use try-catch to handle case where Firebase is not configured yet
-            const q = query(collection(db, "enquiries"), orderBy("timestamp", "desc"));
-            const querySnapshot = await getDocs(q);
-            const data: Enquiry[] = querySnapshot.docs.map((doc) => {
-                const raw = doc.data() as Partial<Enquiry>;
 
-                return {
-                    id: doc.id,
-                    name: raw.name ?? '',
-                    phone: raw.phone ?? '',
-                    grade: raw.grade ?? '',
-                    subject: raw.subject ?? '',
-                    message: raw.message ?? '',
-                    timestamp: raw.timestamp ?? null,
-                };
-            });
-            setEnquiries(data);
-        } catch (err: unknown) {
-            console.error("Error fetching enquiries:", err);
-            // Fallback for demo if Firebase fails
-            if (isRecoverableFirestoreError(err)) {
-                setError("Firebase not connected or permissions denied. Showing demo data.");
-                // You could set demo data here if you wanted
-            } else {
-                setError("Failed to fetch data. Check console.");
-            }
-        } finally {
+        // MOCK DATA (Simulated for demo)
+        setTimeout(() => {
+            setEnquiries([
+                {
+                    id: '1',
+                    name: 'John Doe',
+                    phone: '9876543210',
+                    grade: '9-10',
+                    subject: 'Maths',
+                    message: 'Need help with geometry.',
+                    timestamp: Timestamp.now()
+                },
+                {
+                    id: '2',
+                    name: 'Jane Smith',
+                    phone: '9123456789',
+                    grade: '11-12',
+                    subject: 'Physics',
+                    message: 'Enquiry test message.',
+                    timestamp: Timestamp.now()
+                }
+            ]);
             setLoading(false);
-        }
+        }, 1000);
     };
 
     if (!isAuthenticated) {

@@ -29,7 +29,7 @@ const Navbar = () => {
                             <img
                                 src="/logo.svg"
                                 alt="SRI'S TUITION"
-                                className="h-14 md:h-16 w-[190px] md:w-[230px] object-contain"
+                                className="h-14 md:h-16 w-auto object-contain"
                                 onError={(e) => {
                                     const target = e.currentTarget;
                                     target.onerror = null; // Prevent infinite loop

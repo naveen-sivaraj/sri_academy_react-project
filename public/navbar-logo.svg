@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 120" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">SRI'S TUITION ACADEMY</title>
+  <desc id="logoDesc">Shield emblem, crescent S symbol and academy text.</desc>
+
+  <defs>
+    <linearGradient id="gShield" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E0E0E0"/>
+    </linearGradient>
+    <linearGradient id="gGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D3A84E"/>
+      <stop offset="100%" stop-color="#E7C57A"/>
+    </linearGradient>
+    <linearGradient id="gCrescent" x1="0%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#4253B5"/>
+      <stop offset="100%" stop-color="#18B7E8"/>
+    </linearGradient>
+    <linearGradient id="gS" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5D49A4"/>
+      <stop offset="100%" stop-color="#14B9DD"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Left: Shield (Scaled down and positioned) -->
+  <g transform="translate(10, 10) scale(0.6)">
+    <path d="M20 25 C58 25 84 10 84 10 C84 10 112 25 150 25 L146 82 C141 112 107 134 84 142 C61 134 27 112 22 82 Z"
+          fill="url(#gShield)" stroke="#D0B069" stroke-width="3"/>
+    <rect x="8" y="69" width="152" height="4" fill="url(#gGold)"/>
+    <rect x="8" y="95" width="152" height="4" fill="url(#gGold)"/>
+    <path d="M53 57 C58 45 72 43 84 50 C96 43 110 45 115 57 L115 72 C106 67 96 66 84 74 C72 66 62 67 53 72 Z"
+          fill="#F7F1DA" stroke="#D0B069" stroke-width="1.5"/>
+    <path d="M84 50 L84 74" stroke="#D0B069" stroke-width="1.5"/>
+    <path d="M50 115 C62 126 73 132 84 136 C95 132 106 126 118 115" fill="none" stroke="#D0B069" stroke-width="2"/>
+    <path d="M58 120 C66 127 75 132 84 135 C93 132 102 127 110 120" fill="none" stroke="#D0B069" stroke-width="1.5"/>
+    <polygon points="84,103 88,112 98,112 90,118 93,127 84,122 75,127 78,118 70,112 80,112" fill="#D0B069"/>
+  </g>
+
+  <!-- Middle: S Symbol (Scaled and positioned) -->
+  <g transform="translate(100, 10) scale(0.35)">
+     <path
+      d="M200 250
+         C129 250 73 193 73 122
+         C73 62 113 15 169 2
+         C130 31 106 76 106 126
+         C106 190 154 238 217 238
+         C231 238 244 236 256 232
+         C240 244 221 250 200 250 Z"
+      fill="url(#gCrescent)"
+    />
+    <path
+      d="M176 72
+         C190 60 210 57 225 67
+         C236 74 242 84 242 96
+         C242 108 236 117 226 122
+         C217 127 206 129 195 133
+         C181 139 172 145 172 158
+         C172 171 182 181 196 184
+         C210 187 224 182 236 173"
+      fill="none"
+      stroke="url(#gS)"
+      stroke-width="12"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </g>
+
+  <!-- Right: Text -->
+  <text x="190" y="65" text-anchor="start"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="40" font-weight="700" letter-spacing="1"
+        fill="#FFFFFF">
+    SRI'S TUITION
+  </text>
+  <text x="190" y="95" text-anchor="start"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="24" font-weight="600" letter-spacing="6"
+        fill="#fbbf24">
+    ACADEMY
+  </text>
+</svg>
